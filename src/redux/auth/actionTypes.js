@@ -1,0 +1,11 @@
+// Auth
+export const AUTH_REQUEST = 'AUTH_REQUEST';
+export const AUTH_START = 'AUTH_START';
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_FAILED = 'AUTH_FAILED';
+
+export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+
+export const CHECK_AUTH_REQUEST='CHECK_AUTH_REQUEST';
+export const CHECK_SET_LOGOUT='CHECK_SET_LOGOUT';

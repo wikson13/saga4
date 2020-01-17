@@ -1,34 +1,22 @@
 import React, {useState} from 'react';
 import Firebase from "../firebase/firebase";
-import {connect} from "react-redux";
-
+import {useDispatch} from "react-redux";
+import {authRequest} from "../redux/auth/authActions"
 const LoginForm = (props) => {
+
+    const dispatch = useDispatch();
 
     const [login,setLogin] = useState('')
     const [password,setPassword] = useState('')
 
     const loginButtonHandler=(e)=>{
         e.preventDefault();
-
-       Firebase.auth().signInWithEmailAndPassword(login, password).catch(function(error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
-            console.log(errorCode);
-            console.log(errorMessage);
-        });
-
+dispatch(authRequest(login, password, false))
     };
 
 
     const logoutButtonHandler=()=>{
-        Firebase.auth().signOut().then(function() {
-            // Sign-out successful.
-        }).catch(function(error) {
-            // An error happened.
-            console.log(error)
-        });
+
     };
 
     return (
@@ -56,15 +44,9 @@ const LoginForm = (props) => {
     );
 };
 
-const mapStateToProps = state => {
-    return {
-        userEmail:state.auth.userEmail
-    };
-};
 
 
-
-export default connect(mapStateToProps, )(LoginForm);
+export default LoginForm;
 
 
 

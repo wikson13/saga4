@@ -3,6 +3,9 @@ import * as actions from "../actions/users";
 import * as actionTypes from "../actions/actionTypes";
 import * as api from "../../api/users"
 
+
+
+
 function* getUsers() {
     try {
         const result = yield call(api.getUsers)
