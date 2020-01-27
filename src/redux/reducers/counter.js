@@ -7,13 +7,18 @@ const initialState={
 
 const counterReducer=(state=initialState,action)=>{
     switch(action.type){
+        // case actionTypes.INCREMENT_COUNTER:{
+        //     return{
+        //         counter:state.counter+1
+        //     }
+        // }
+        // case actionTypes.ASYNC_INCREMENT_COUNTER_DO:{
+        //     return{
+        //         counter:state.counter+1
+        //     }
+        // }
         case actionTypes.INCREMENT_COUNTER:{
-            return{
-                counter:state.counter+1
-            }
-        }
-        case actionTypes.ASYNC_INCREMENT_COUNTER_DO:{
-            return{
+            return {
                 counter:state.counter+1
             }
         }

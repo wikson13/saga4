@@ -3,16 +3,18 @@ import * as actions from "../actions/counter";
 import * as actionTypes from "../actions/actionTypes";
 import * as api from "../../api/users"
 
-function* incrementAsync() {
-    yield delay(1000)
-    yield put({type: actionTypes.ASYNC_INCREMENT_COUNTER_DO})
+
+
+function* incrementAsync(){
+    yield delay(1000);
+    yield put ({type:actionTypes.INCREMENT_COUNTER})
 }
 
-function* watchIncrementAsync() {
-    yield takeLatest(actionTypes.ASYNC_INCREMENT_COUNTER, incrementAsync)
+function* watchIncrementAsync(){
+    yield takeLatest(actionTypes.INCREMENT_COUNTER_ASYNC_REQUEST, incrementAsync)
 }
 
-const counterSagas = [
+const counterSagas =[
     fork(watchIncrementAsync)
 ];
 
